@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description" content="Builderrin Construction Multipages HTML5 Template">
+    <meta name="author" content="">
+
+    <!-- Page Title -->
+    <title>Builderrin Construction Multipages HTML5 Template</title>
+
+    <!-- Favicon and touch Icons -->
+    <link href="/client/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="/client/images/apple-touch-icon.html" rel="apple-touch-icon">
+    <link href="/client/images/apple-touch-icon-72x72.html" rel="apple-touch-icon" sizes="72x72">
+    <link href="/client/images/apple-touch-icon-114x114.html" rel="apple-touch-icon" sizes="114x114">
+    <link href="/client/images/apple-touch-icon-144x144.html" rel="apple-touch-icon" sizes="144x144">
+
+    <!-- Lead Style -->
+    <link href="~/client/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!--PreLoader-->
+    <div id="preloader" class="loader_show">
+        <div class="loader-wrap">
+            <div class="loader">
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+    <!-- Header 1 -->
+    <header class="header">
+        <div class="top_bar">
+            <div class="container">
+                <div class="top_bar_inner">
+                    <div class="header_social">
+                        <h6>Follow Us</h6>
+                        <ul class="top_social">
+                            <li class="facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li class="twitter"><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li class="dribbble"><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
+                            <li class="instagram"><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            <li class="linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="header_info">
+                        <div class="schedule">
+                            <div class="hide_icon d-md-none" data-text="Monday - Friday (9.00am - 9.00pm)"> <span><i class="fa fa-clock-o"></i></span></div>
+                            <div class="d-none d-md-block"><span><i class="fa fa-clock-o"></i></span> Monday - Friday <strong>(9.00am - 9.00pm)</strong></div>
+                        </div>
+                        <div class="schedule">
+                            <div class="hide_icon d-md-none" data-text="builderrine@gmail.com"> <span><i class="fa fa-envelope"></i></span></div>
+                            <div class="d-none d-md-block"><span><i class="fa fa-envelope"></i></span> builderrine@gmail.com</div>
+                        </div>
+                        <div class="free_contact">
+                            <a href="contact.html" class="btn">Đặt Hàng Ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle_bar">
+            <div class="container">
+                <div class="middle_bar_inner">
+                    <div class="logo">
+                        <a asp-action="Index" asp-controller="Home" class="light_mode_logo"><img src="/client/images/logo.svg" alt="logo"></a>
+                        <a asp-action ="Index" asp-controller="Home" class="dark_mode_logo"><img src="/client/images/logo_foot.svg" alt="logo"></a>
+                    </div>
+
+                    <div class="header_right_part">
+                        <div class="mainnav">
+                            <ul class="main_menu">
+                                <li class="active">
+                                    <a asp-action="Index" asp-controller="Home">Trang Chủ</a>
+                                    <!-- <ul class="sub-menu">
+                                        <li class="menu-item active"><a href="index-2.html">Home One</a></li>
+                                        <li class="menu-item"><a href="index-3.html">Home Two</a></li>
+                                    </ul> -->
+                                </li>
+                                <li>
+                                    <a asp-controller="Home" asp-action="Services">Dịch Vụ</a>
+                                   @* <ul class="sub-menu">
+                                        <li class="menu-item"><a href="services.html">Service One</a></li>
+                                        <li class="menu-item"><a href="services-2.html">Service Two</a></li>
+                                        <li class="menu-item"><a href="service-details.html">Service Details</a></li>
+                                    </ul>*@
+                                </li>
+                                <li>
+                                    <a asp-action="DuAn" asp-controller="Home">Dự Án</a>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Thông Tin</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a asp-action="About" asp-controller="Home">Thông Tin</a></li>
+                                        <li class="menu-item"><a asp-action="Teams" asp-controller="Home">Team</a></li>
+                                        <li class="menu-item"><a asp-action="Fag" asp-controller="Home">FAQ</a></li>
+                                        @*<li class="menu-item menu-item-has-children">
+                                            <a href="#">Shop</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="shop-1.html">Shop One</a></li>
+                                                <li class="menu-item"><a href="shop-2.html">Shop Two</a></li>
+                                                <li class="menu-item"><a href="shop-3.html">Shop Three</a></li>
+                                                <li class="menu-item"><a href="shop-4.html">Shop Four</a></li>
+                                                <li class="menu-item"><a href="product.html">Product Details</a></li>
+                                                <li class="menu-item"><a href="cart.html">Cart</a></li>
+                                                <li class="menu-item"><a href="checkout.html">Checkout</a></li>
+                                            </ul>
+                                        </li>*@
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a asp-action="Blog" asp-controller="Home">Blog</a>
+                                </li>
+                                <li class="menu-item"><a href="contact.html">Liên Hệ</a></li>
+                            </ul>
+                        </div>
+                        <div class="phone">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <div><span>Tư Vấn Lắp Đặt</span><br><span class="phn_number">(+123)987.654.32</span></div>
+                        </div>
+                        <div class="header_search">
+                            <button type="submit" class="form-control-submit"><i class="ion-ios-search"></i></button>
+                        </div>
+                        <div class="open_search">
+                            <form class="search_form" action="https://wpthemebooster.com/demo/themeforest/html/builderrin/light/search.php">
+                                <input type="text" name="search" class="keyword form-control" placeholder="Search..." />
+                                <button type="submit" class="form-control-submit"><i class="ion-ios-search"></i></button>
+                            </form>
+                        </div>
+                        <button class="ma5menu__toggle" type="button">
+                            <i class="ion-android-menu"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+@RenderBody()
+    <!-- Footer 1 -->
+    <footer class="footer">
+        <div class="footer_above">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="footer_widget footer_widget_padding">
+                            <h4 class="widget_title">
+                                Cơ ĐIỆN LẠNH SAO VÀNG
+                            </h4>
+                            <p>Câu slogan công ty Câu slogan công ty Câu slogan công ty Câu slogan công ty Câu slogan công ty Câu slogan công ty.</p>
+                            <div class="subscribe">
+                                <form class="form-inline">
+                                    <div class="input-group mb-2 mr-sm-2">
+                                        <input type="email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                    <button type="submit" class="btn">Đăng Ký</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div class="footer_widget footer_links">
+                            <h4 class="widget_title">
+                                Dịch Vụ
+                            </h4>
+                            <div class="footer_nav">
+                                <ul class="footer_menu">
+                                    <li class="menu-item"><a href="project.html">Dịch vụ 1</a></li>
+                                    <li class="menu-item"><a href="project-2.html">Dịch vụ 2</a></li>
+                                    <li class="menu-item"><a href="project-details.html">Dịch vụ 3</a></li>
+                                    <li class="menu-item"><a href="project-2.html">Dịch vụ 4</a></li>
+                                    <li class="menu-item"><a href="project.html">Dịch vụ 5</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div class="footer_widget footer_links">
+                            <h4 class="widget_title">
+                                Thông Tin
+                            </h4>
+                            <div class="footer_nav">
+                                <ul class="footer_menu">
+                                    <li class="menu-item"><a href="about.html">Về Chúng Tôi</a></li>
+                                    <li class="menu-item"><a href="blog-details.html">Thông Tin</a></li>
+                                    <li class="menu-item"><a href="project-details.html">Blogs</a></li>
+                                    <li class="menu-item"><a href="service-details.html">Hợp Tác</a></li>
+                                    <li class="menu-item"><a href="contact.html">Liên Hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="footer_widget">
+                            <h4 class="widget_title">
+                                Địa Chỉ
+                            </h4>
+                            <ul>
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i><span>Số 33 ngõ 205 Lương Thế Vinh, P. Trung Văn, Q, Nam Từ Liêm, Hà Nội</span></li>
+                                <li><i class="fa fa-envelope" aria-hidden="true"></i><span>Kholanhsaovanghn@gmail.com</span></li>
+                                <li><i class="fa fa-clock-o" aria-hidden="true"></i><span>Thời gian làm việc</span></li>
+                            </ul>
+                            <div class="side_footer_social">
+                                <ul class="bottom_social">
+                                    <li class="facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                    <li class="twitter"><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                    <li class="dribbble"><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
+                                    <li class="instagram"><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                                    <li class="linkedin"><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="footer_bottom_inner">
+                    <div class="logo">
+                        <a href="index-2.html"><img src="/client/images/logo_foot.svg" alt="Logo"></a>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy;2023 All rights reserved.</p>
+                    </div>
+                    <div class="footer_nav_bottom">
+                        <ul>
+                            <li><a href="#">Điều Khoản & Thỏa Thuận</a></li>
+                            <li><a href="#">Chính Sách</a></li>
+                        </ul>
+                    </div>
+                    <div class="totop">
+                        <a href="#"><i class="ion-ios-arrow-up"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="slide_navi">
+        <div class="side_footer_social">
+            <ul class="bottom_social">
+                <li class="facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
+                <li class="twitter"><a href="#"><i class="ion-social-twitter"></i></a></li>
+                <li class="dribbble"><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
+                <li class="instagram"><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                <li class="linkedin"><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+
+    <!-- All JavaScript Files -->
+    <script src="~/client/js/jquery-3.6.0.min.js"></script>
+    <script src="~/client/js/bootstrap.min.js"></script>
+    <script src="~/client/plugins/swiper/swiper-bundle.min.js"></script>
+
+    <script src="~/client/plugins/menu/ma5-menu.min.js"></script>
+    <script src="~/client/plugins/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Select2 -->
+    <script src="~/client/plugins/select2/~/client/js/select2.min.js"></script>
+
+    <!-- Isotope -->
+    <script src="~/client/plugins/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/client/plugins/isotope/imagesloaded.pkgd.min.js"></script>
+
+    <script src="~/client/plugins/aos/aos.js"></script>
+    <script src="~/client/js/funfacts.js"></script>
+    <script src="~/client/js/custom.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,150 @@
+﻿@model Out_Source_Project.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Admin">Trang Chủ</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Categories">Quản lý danh mục</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Xóa danh mục</li>
+    </ol>
+    <h6 class="slim-pagetitle">Xóa danh mục</h6>
+</div><!-- slim-pageheader -->
+
+<div class="section-wrapper mg-t-20">
+    <div class="form-layout form-layout-7">
+        <form asp-area="Admin" asp-action="Delete" asp-controller="Categories" asp-route-id="@Model.CatId" method="post">
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    ID:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="CatId" type="text">
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Tên Danh Mục:
+                </div>
+				<div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="CatName" type="text">
+                </div>
+			</div>
+			<div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Tiêu Đề:
+                </div>
+				<div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="Title" type="text">
+                </div>
+			</div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Alias:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="Alias" type="text">
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    MetaDesc:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="MetaDesc" type="text">
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    MetaKey:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="MetaKey" type="text">
+                </div>
+            </div>
+			<div class="row no-gutters">
+				<div class="col-5 col-sm-4">
+					Trạng Thái:
+				</div>
+				<div class="col-7 col-sm-8">
+                    @if (Model.Published == true)
+                    {
+                        <span class="badge badge-primary">Xuất Bản</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-primary">Không Xuất Bản</span>
+                    }
+				</div>
+			</div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Sắp Xếp:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="Ordering" type="text">
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Danh Mục Cha:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="Parents" type="text">
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Ảnh Nổi Bật 1:
+                </div>
+                <div class="col-7 col-sm-8">
+                    @if (!string.IsNullOrEmpty(Model.Icon))
+                    {
+                        <img width="80" height="80" src="~/images/categories/@Model.Thumb" alt="@Model.CatName" />
+                    }
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Ảnh Bìa:
+                </div>
+                <div class="col-7 col-sm-8">
+                    @if (!string.IsNullOrEmpty(Model.Icon))
+                    {
+                        <img width="80" height="80" src="~/images/cover/@Model.Cover" alt="@Model.CatName" />
+                    }
+                </div>
+            </div>
+			<div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Ảnh Nổi Bật 2:
+                </div>
+				<div class="col-7 col-sm-8">
+                    @if (!string.IsNullOrEmpty(Model.Icon))
+                    {
+                        <img width="80" height="80" src="~/images/icon/@Model.Icon" alt="@Model.CatName"/>
+                    }
+                </div>
+			</div>
+			<div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Mô Tả:
+                </div>
+				<div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="Description" type="text">
+                </div>
+			</div>
+                
+           
+
+            <div class="form-layout-footer">
+                <button class="btn btn-primary bd-0" type="submit">Đồng Ý</button>
+                <a class="btn btn-secondary bd-0" asp-action="Index" asp-area="Admin" asp-controller="Categories">Hủy</a>
+            </div><!-- form-layout-footer -->
+        </form>
+    </div><!-- form-layout -->
+
+</div><!-- section-wrapper -->

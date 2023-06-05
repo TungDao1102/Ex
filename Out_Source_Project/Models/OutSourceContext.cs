@@ -31,9 +31,9 @@ public partial class OutSourceContext : DbContext
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.Property(e => e.AccountId)
-                .ValueGeneratedNever()
-                .HasColumnName("AccountID");
+            entity.HasKey(e => e.AccountId).HasName("PK_Account");
+
+            entity.Property(e => e.AccountId).HasColumnName("AccountID");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(50);
             entity.Property(e => e.FullName).HasMaxLength(50);
@@ -52,11 +52,9 @@ public partial class OutSourceContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CatId);
+            entity.HasKey(e => e.CatId).HasName("PK_Categoriess");
 
-            entity.Property(e => e.CatId)
-                .ValueGeneratedNever()
-                .HasColumnName("CatID");
+            entity.Property(e => e.CatId).HasColumnName("CatID");
             entity.Property(e => e.Alias).HasMaxLength(255);
             entity.Property(e => e.CatName).HasMaxLength(255);
             entity.Property(e => e.Cover).HasMaxLength(255);
@@ -69,9 +67,9 @@ public partial class OutSourceContext : DbContext
 
         modelBuilder.Entity<Post>(entity =>
         {
-            entity.Property(e => e.PostId)
-                .ValueGeneratedNever()
-                .HasColumnName("PostID");
+            entity.HasKey(e => e.PostId).HasName("PK_Post");
+
+            entity.Property(e => e.PostId).HasColumnName("PostID");
             entity.Property(e => e.AccountId).HasColumnName("AccountID");
             entity.Property(e => e.Alias).HasMaxLength(255);
             entity.Property(e => e.Author).HasMaxLength(255);
@@ -94,9 +92,9 @@ public partial class OutSourceContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.Property(e => e.RoleId)
-                .ValueGeneratedNever()
-                .HasColumnName("RoleID");
+            entity.HasKey(e => e.RoleId).HasName("PK_Roless");
+
+            entity.Property(e => e.RoleId).HasColumnName("RoleID");
             entity.Property(e => e.RoleDescription).HasMaxLength(50);
             entity.Property(e => e.RoleName).HasMaxLength(50);
         });

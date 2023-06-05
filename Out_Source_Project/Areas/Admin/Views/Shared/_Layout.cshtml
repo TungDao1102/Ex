@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -28,7 +29,7 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    <title>Slim Responsive Bootstrap 4 Admin Template</title>
+    <title>@ViewData["Title"]</title>
 
     <!-- vendor css -->
     <link href="~/admin/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -190,11 +191,11 @@
         <div class="container">
             <ul class="nav">
                 <li class="nav-item with-sub active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" asp-controller="Roles" asp-action="Index" asp-area="Admin">
                         <i class="icon ion-ios-home-outline"></i>
                         <span>Dashboard</span>
                     </a>
-                    <div class="sub-item">
+                    @*<div class="sub-item">
                         <ul>
                             <li><a href="index.html">Dashboard 01</a></li>
                             <li><a href="index2.html">Dashboard 02</a></li>
@@ -202,9 +203,9 @@
                             <li><a href="index4.html">Dashboard 04</a></li>
                             <li><a href="index5.html">Dashboard 05</a></li>
                         </ul>
-                    </div><!-- sub-item -->
+                    </div><!-- sub-item -->*@
                 </li>
-                <li class="nav-item with-sub mega-dropdown">
+               @* <li class="nav-item with-sub mega-dropdown">
                     <a class="nav-link" href="#">
                         <i class="icon ion-ios-filing-outline"></i>
                         <span>UI Elements</span>
@@ -284,13 +285,13 @@
                             </div><!-- col -->
                         </div><!-- row -->
                     </div><!-- dropdown-menu -->
-                </li>
+                </li>*@
                 <li class="nav-item with-sub">
                     <a class="nav-link" href="#">
                         <i class="icon ion-ios-book-outline"></i>
-                        <span>Pages</span>
+                        <span>Quản lý blogs</span>
                     </a>
-                    <div class="sub-item">
+                   @* <div class="sub-item">
                         <ul>
                             <li><a href="page-profile.html">Profile Page</a></li>
                             <li><a href="page-invoice.html">Invoice</a></li>
@@ -330,43 +331,42 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div><!-- dropdown-menu -->
+                    </div><!-- dropdown-menu -->*@
                 </li>
                 <li class="nav-item with-sub">
                     <a class="nav-link" href="#" data-toggle="dropdown">
                         <i class="icon ion-ios-gear-outline"></i>
-                        <span>Forms</span>
+                        <span>Quản lý hệ thống</span>
                     </a>
                     <div class="sub-item">
                         <ul>
-                            <li><a href="form-elements.html">Form Elements</a></li>
-                            <li><a href="form-layouts.html">Form Layouts</a></li>
-                            <li><a href="form-validation.html">Form Validation</a></li>
-                            <li><a href="form-wizards.html">Form Wizards</a></li>
-                            <li><a href="form-editor.html">WYSIWYG Editor</a></li>
-                            <li><a href="form-select2.html">Select2</a></li>
-                            <li><a href="form-rangeslider.html">Range Slider</a></li>
-                            <li><a href="form-datepicker.html">Datepicker</a></li>
+                            <li><a asp-action="Index" asp-controller="Categories" asp-area="Admin">Quản lý danh mục</a></li>
+                            <li><a href="form-layouts.html">Quản lý tài khoản</a></li>
+                            <li><a asp-action="Index" asp-controller="Roles" asp-area="Admin">Quyền truy cập</a></li>
                         </ul>
                     </div><!-- dropdown-menu -->
                 </li>
-                <li class="nav-item">
+                @*<li class="nav-item">
                     <a class="nav-link" href="page-messages.html">
                         <i class="icon ion-ios-chatboxes-outline"></i>
                         <span>Messages</span>
                         <span class="square-8"></span>
                     </a>
-                </li>
+                </li>*@
                 <li class="nav-item">
                     <a class="nav-link" href="widgets.html">
                         <i class="icon ion-ios-analytics-outline"></i>
-                        <span>Widgets</span>
+                        <span>Quản lý thêm</span>
                     </a>
                 </li>
             </ul>
         </div><!-- container -->
     </div><!-- slim-navbar -->
+    <div class="slim-mainpanel">
+        <div class="container">
     @RenderBody()
+	</div>
+	</div>
     <div class="slim-footer">
         <div class="container">
             <p>Copyright 2018 &copy; All Rights Reserved. Slim Dashboard Template</p>

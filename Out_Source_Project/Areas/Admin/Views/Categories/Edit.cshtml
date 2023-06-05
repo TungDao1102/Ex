@@ -1,0 +1,116 @@
+﻿@model Out_Source_Project.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Admin">Trang Chủ</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Categories">Quản lý danh mục</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Chỉnh sửa danh mục</li>
+    </ol>
+    <h6 class="slim-pagetitle">Chỉnh sửa danh mục</h6>
+</div><!-- slim-pageheader -->
+
+<div class="section-wrapper">
+    
+        <div class="form-layout">
+			<form asp-area="Admin" asp-action="Edit" asp-controller="Categories" asp-route-id="@Model.CatId" method="post" enctype="multipart/form-data">
+		<input type="hidden" asp-for="CatId" />
+        <input type="hidden" asp-for="Alias" />
+        <input type="hidden" asp-for="Thumb" />
+        <input type="hidden" asp-for="Icon" />
+        <input type="hidden" asp-for="Cover" />
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Tên Danh Mục: <span class="tx-danger">*</span></label>
+                        <input class="form-control" asp-for="CatName">
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Alias: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" asp-for="Alias">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Tiêu Đề: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" asp-for="Title">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">MetaDesc: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" asp-for="MetaDesc">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">MetaKey: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" asp-for="MetaKey">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Ảnh Nổi Bật 1: <span class="tx-danger">*</span></label>
+                        <input name="fThumb" class="form-control-file" type="file" asp-for="Thumb">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Trạng Thái: <span class="tx-danger">*</span></label>
+                        <br />
+                        <input type="checkbox" asp-for="Published"> <span>Active</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Sắp Xếp: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="number" value="0" asp-for="Ordering">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Danh Mục Cha: <span class="tx-danger">*</span></label>
+                        <select class="form-control select2" asp-for="Parents" asp-items="@ViewBag.DanhMucGoc" required>
+                            <option value="0">-- Chọn Danh Mục --</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Levels (1 là danh mục gốc, 2 là danh mục con): <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="number" asp-for="Levels">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Ảnh Nổi Bật 2: <span class="tx-danger">*</span></label>
+                        <input name="fIcon" class="form-control-file" type="file" asp-for="Icon">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Ảnh Bìa: <span class="tx-danger">*</span></label>
+                        <input name="fCover" class="form-control-file" type="file" asp-for="Cover">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Mô Tả: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" asp-for="Description">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-layout-footer">
+                <button class="btn btn-primary bd-0" type="submit">Đồng Ý</button>
+                <a class="btn btn-secondary bd-0" asp-action="Index" asp-area="Admin" asp-controller="Categories">Hủy</a>
+            </div><!-- form-layout-footer -->
+        </form>
+        </div><!-- form-layout -->
+    
+</div><!-- section-wrapper -->

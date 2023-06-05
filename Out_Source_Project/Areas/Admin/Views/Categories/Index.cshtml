@@ -1,0 +1,79 @@
+﻿@model X.PagedList.IPagedList<Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Out_Source_Project.Models;
+@using X.PagedList.Mvc.Core;
+@{
+    ViewData["Title"] = "Quản lý danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Admin">Trang Chủ</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Categories">Quản lý danh mục</a></li>
+        @*<li class="breadcrumb-item active" aria-current="page">Basic Tables</li>*@
+    </ol>
+    <h6 class="slim-pagetitle">Quản lý danh mục</h6>
+</div><!-- slim-pageheader -->
+
+<div class="section-wrapper">
+    <a class="section-title btn btn-primary" asp-action="Create" asp-area="Admin" asp-controller="Categories">Thêm mới</a>
+
+
+    <div class="table-responsive">
+        <table class="table mg-b-0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <td>Tên Danh Mục</td>
+                    <td>Alias</td>
+                   
+                    <td>Trạng Thái</td>
+                  
+                    <th>#</th>
+                </tr>
+            </thead>
+            @if (Model != null && Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <th scope="row">@item.CatId</th>
+                            <td>@item.CatName</td>
+                            <td>@item.Alias</td>
+                            @*<td>@item.Title</td> 
+                             
+						    <td>@item.MetaDesc</td>
+							<td>@item.MetaKey</td>
+							<td>@item.Thumb</td>*@
+                            <td>@if (item.Published == true)
+                                {
+                                    <span class="badge badge-primary">Xuất Bản</span>
+                                }
+                                else
+                                {
+                                     <span class="badge badge-primary">Không Xuất Bản</span>
+                                }
+                            </td>
+                            @*<td>@item.Ordering</td>
+							<td>@item.Parents</td>
+							<td>@item.Levels</td>*@
+							@*<td>@item.Icon</td>
+							<td>@item.Cover</td>*@
+							@*<td>@item.Description</td>*@
+                            <td>
+                                <a asp-area="Admin" asp-action="Edit" asp-route-id="@item.CatId" asp-controller="Categories" class="btn btn-primary">Sửa</a>
+                                <a asp-area="Admin" asp-action="Delete" asp-route-id="@item.CatId" asp-controller="Categories" class="btn btn-danger">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            }
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new {page=page}), new X.PagedList.Web.Common.PagedListRenderOptions() {
+        LiElementClasses= new List<String> {"page-item"},
+        PageClasses = new List<string> {"page-link"}
+        })
+    </div><!-- table-responsive -->
+</div>

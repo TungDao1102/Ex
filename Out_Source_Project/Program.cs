@@ -1,8 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using Out_Source_Project.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddDbContext<OutSourceContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("OutSourceContext")));
+builder.Services.AddSession();
+builder.Services.AddMemoryCache();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,79 @@
+﻿@model X.PagedList.IPagedList<Account>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Out_Source_Project.Models;
+@using X.PagedList.Mvc.Core;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Admin">Trang Chủ</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Accounts">Quản lý tài khoản</a></li>
+        @*<li class="breadcrumb-item active" aria-current="page">Basic Tables</li>*@
+    </ol>
+    <h6 class="slim-pagetitle">Quản lý bài viết</h6>
+</div><!-- slim-pageheader -->
+
+<div class="section-wrapper">
+    <a class="section-title btn btn-primary" asp-action="Create" asp-area="Admin" asp-controller="Accounts">Thêm mới tài khoản</a>
+
+
+    <div class="table-responsive">
+        <table class="table mg-b-0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <td>Họ và Tên</td>
+                    <td>Quyền Truy Cập</td>
+                    <td>Trạng Thái</td>
+                    <th>#</th>
+                </tr>
+            </thead>
+            @if (Model != null && Model.Count() > 0)
+            {
+
+                foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <th scope="row">@item.AccountId</th>
+                            <td>
+                                @item.FullName
+                            </td>
+                            <td>
+                                @if (item.Role != null && item.Role.RoleName != null)
+                                {
+                                    <p>@item.Role.RoleName</p>
+                                }
+                                else
+                                {
+                                    <p>Không Có</p>
+                                }
+                            </td>
+                            <td>
+                                @if (item.Active == true)
+                                {
+                                    <span class="badge badge-primary">Hoạt Động</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-primary">Bị Khóa</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-area="Admin" asp-action="Edit" asp-route-id="@item.AccountId" asp-controller="Accounts" class="btn btn-primary">Sửa</a>
+                                <a asp-area="Admin" asp-action="Delete" asp-route-id="@item.AccountId" asp-controller="Accounts" class="btn btn-danger">Xóa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            }
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new {page=page}), new X.PagedList.Web.Common.PagedListRenderOptions() {
+        LiElementClasses= new List<String> {"page-item"},
+        PageClasses = new List<string> {"page-link"}
+        })
+    </div><!-- table-responsive -->
+</div>

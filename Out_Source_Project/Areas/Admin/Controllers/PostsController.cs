@@ -25,6 +25,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         // GET: Admin/Posts
         public async Task<IActionResult> Index(int? page)
         {
+
             int pageSize = 10;
             int pageNumber = (page == null || page < 0) ? 1 : page.Value;
             //  var lstPost = await _context.Posts.Include(p => p.Account).Include(p => p.Cat).ToListAsync();
@@ -32,9 +33,10 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         {
             PostId = p.PostId,
             Title = p.Title,
-            CatId = p.CatId,
-            Published = p.Published
-        }).ToListAsync();
+            Cat = p.Cat,
+            Published = p.Published,
+            Alias = p.Alias
+        }).OrderByDescending(x => x.PostId).ToListAsync();
             PagedList<Post> lst = new PagedList<Post>(lstPost, pageNumber, pageSize);
             return View(lst);
 
@@ -58,10 +60,11 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.Alias = Ultilities.SEOUrl(post.Title);
                 if (fThumb != null)
                 {
                     string extension = Path.GetExtension(fThumb.FileName);
-                    string newName = Ultilities.SEOUrl(post.MetaTitle) + "_preview" + extension;
+                    string newName = Ultilities.SEOUrl(post.Title) + "_preview" + extension;
                     post.Thumb = await Ultilities.UploadFile(fThumb, @"posts\", newName.ToLower());
                 }
                 //if (post.IsNewfeed == null)
@@ -110,6 +113,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
             {
                 try
                 {
+                    post.Alias = Ultilities.SEOUrl(post.Title);
                     if (fThumb != null)
                     {
                         string extension = Path.GetExtension(fThumb.FileName);

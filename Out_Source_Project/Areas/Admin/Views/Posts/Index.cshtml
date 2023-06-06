@@ -10,7 +10,7 @@
 <div class="slim-pageheader">
     <ol class="breadcrumb slim-breadcrumb">
         <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Admin">Trang Chủ</a></li>
-        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Post">Quản lý bài viết</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="Posts">Quản lý bài viết</a></li>
         @*<li class="breadcrumb-item active" aria-current="page">Basic Tables</li>*@
     </ol>
     <h6 class="slim-pagetitle">Quản lý bài viết</h6>
@@ -41,7 +41,7 @@
                         <tr>
                             <th scope="row">@item.PostId</th>
                             <td>
-                                <a href="/@url">@item.Title</a>
+                                <a href="@url">@item.Title</a>
                             </td>
                             <td>
                                 @if (item.Cat != null && item.Cat.CatName != null)

@@ -29,7 +29,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 			int pageNumber = (page == null || page < 0) ? 1 : page.Value;
             var lstCategory = await _context.Categories.AsNoTracking().OrderBy(c => c.CatId).ToListAsync();
             PagedList<Category> lst = new PagedList<Category>(lstCategory, pageNumber, pageSize);
-			ViewBag.CurrentPage = pageNumber;
+		//	ViewBag.CurrentPage = pageNumber;
 			return View(lst);
         }
 

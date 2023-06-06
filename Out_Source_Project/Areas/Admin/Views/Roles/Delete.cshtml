@@ -13,37 +13,38 @@
     <h6 class="slim-pagetitle">Xóa quyền truy cập</h6>
 </div><!-- slim-pageheader -->
 
-<div class="section-wrapper">
-    
-            <div class="form-layout">
-            <div class="row mg-b-25">
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label class="form-control-label">Role ID: <span class="tx-danger">*</span></label>
-                    <input class="form-control" asp-for="RoleId">
+<div class="section-wrapper mg-t-20">
+    <div class="form-layout form-layout-7">
+        <form asp-area="Admin" asp-action="Delete" asp-controller="Roles" asp-route-id="@Model.RoleId" method="post">
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    ID:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="RoleId" type="text" readonly>
                 </div>
             </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label">Tên Role: <span class="tx-danger">*</span></label>
-                        <input class="form-control" asp-for="RoleName"  >
-                    </div>
-                </div><!-- col-4 -->
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label">Role Description: <span class="tx-danger">*</span></label>
-                        <input class="form-control" type="text" asp-for="RoleDescription">
-                    </div>
-                </div><!-- col-4 -->
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Tên quyền truy cập:
                 </div>
-        <form asp-area="Admin" asp-action="Delete" asp-controller="Roles" asp-route-id="@Model.RoleId" method="post">
-			<input type="hidden" asp-for="RoleId" />
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="RoleName" type="text" readonly>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-5 col-sm-4">
+                    Mô tả:
+                </div>
+                <div class="col-7 col-sm-8">
+                    <input class="form-control" asp-for="RoleDescription" type="text" readonly>
+                </div>
+            </div>
             <div class="form-layout-footer">
-                <button class="btn btn-primary bd-0">Xác nhận xóa</button>
+                <button class="btn btn-primary bd-0" type="submit">Đồng Ý</button>
                 <a class="btn btn-secondary bd-0" asp-action="Index" asp-area="Admin" asp-controller="Roles">Hủy</a>
             </div><!-- form-layout-footer -->
         </form>
-        </div><!-- form-layout -->
-         
-          
-</div>
+    </div><!-- form-layout -->
+
+</div><!-- section-wrapper -->

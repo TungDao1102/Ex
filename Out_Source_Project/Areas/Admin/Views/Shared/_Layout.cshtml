@@ -287,9 +287,9 @@
                     </div><!-- dropdown-menu -->
                 </li>*@
                 <li class="nav-item with-sub">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" asp-area="Admin" asp-action="Index" asp-controller="Posts">
                         <i class="icon ion-ios-book-outline"></i>
-                        <span>Quản lý blogs</span>
+                        <span>Quản lý bài viết</span>
                     </a>
                    @* <div class="sub-item">
                         <ul>
@@ -386,5 +386,6 @@
     <script src="~/admin/js/ResizeSensor.js"></script>
     <script src="~/admin/js/dashboard.js"></script>
     <script src="~/admin/js/slim.js"></script>
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

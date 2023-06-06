@@ -27,24 +27,6 @@ namespace Out_Source_Project.Areas.Admin.Controllers
                           Problem("Entity set 'OutSourceContext.Roles'  is null.");
         }
 
-        // GET: Admin/Roles/Details/5
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null || _context.Roles == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var role = await _context.Roles
-        //        .FirstOrDefaultAsync(m => m.RoleId == id);
-        //    if (role == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(role);
-        //}
-
         // GET: Admin/Roles/Create
         public IActionResult Create()
         {

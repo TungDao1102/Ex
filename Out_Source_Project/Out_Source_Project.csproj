@@ -28,4 +28,9 @@
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\admin\lib\select2\js\select2.full.min.js" />
+    <None Include="wwwroot\admin\lib\select2\js\select2.min.js" />
+  </ItemGroup>
+
 </Project>

@@ -77,6 +77,9 @@ public partial class OutSourceContext : DbContext
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.IsHot).HasColumnName("isHot");
             entity.Property(e => e.IsNewfeed).HasColumnName("isNewfeed");
+            entity.Property(e => e.MetaDesc).HasMaxLength(255);
+            entity.Property(e => e.MetaKey).HasMaxLength(255);
+            entity.Property(e => e.MetaTitle).HasMaxLength(255);
             entity.Property(e => e.Scontents).HasColumnName("SContents");
             entity.Property(e => e.Thumb).HasMaxLength(255);
             entity.Property(e => e.Title).HasMaxLength(255);

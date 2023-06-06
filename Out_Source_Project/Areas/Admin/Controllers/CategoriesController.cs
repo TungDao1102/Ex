@@ -63,7 +63,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 				if(fThumb !=null && fThumb.Length > 0)
                 {
                     string extension = Path.GetExtension(fThumb.FileName);
-					string newName = Ultilities.SEOUrl(category.CatName) +"preview_"+ extension;
+					string newName = Ultilities.SEOUrl(category.CatName) +"_preview"+ extension;
 					category.Thumb = await Ultilities.UploadFile(fThumb, @"categories\", newName.ToLower());
 				}
 				if (fCover != null && fCover.Length > 0)
@@ -131,7 +131,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 					if (fThumb != null)
 					{
 						string extension = Path.GetExtension(fThumb.FileName);
-						string newName = Ultilities.SEOUrl(category.CatName) + "preview_" + extension;
+						string newName = Ultilities.SEOUrl(category.CatName) + "_preview" + extension;
 						category.Thumb = await Ultilities.UploadFile(fThumb, @"categories\", newName.ToLower());
 					}
                     if (fCover != null)

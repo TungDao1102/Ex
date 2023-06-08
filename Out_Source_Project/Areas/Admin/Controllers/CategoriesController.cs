@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Out_Source_Project.Helper;
 using Out_Source_Project.Models;
+using Out_Source_Project.Models.Authentication;
 using X.PagedList;
 
 namespace Out_Source_Project.Areas.Admin.Controllers
@@ -23,6 +24,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Categories
+        [Authentication]
         public async Task<IActionResult> Index(int? page)
         {
 			int pageSize = 10;
@@ -35,6 +37,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 
 
         // GET: Admin/Categories/Create
+        [Authentication]
         public IActionResult Create()
         {
 			ViewBag.DanhMucGoc = new SelectList(_context.Categories.Where(x => x.Levels==1), "CatId", "CatName");
@@ -87,6 +90,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Categories/Edit/5
+        [Authentication]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Categories == null)
@@ -167,6 +171,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Categories/Delete/5
+        [Authentication]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Categories == null)

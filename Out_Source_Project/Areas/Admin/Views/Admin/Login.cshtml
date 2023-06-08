@@ -1,0 +1,27 @@
+﻿@model Out_Source_Project.Models.ViewModel.LoginViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<form asp-action="Login" asp-controller="Admin" asp-area="Admin" method="post">
+	<div class="signin-wrapper">
+
+    <div class="signin-box">
+        <h2 class="slim-logo"><a href="#">Đăng Nhập<span>.</span></a></h2>
+        <h2 class="signin-title-primary">Welcome back!</h2>
+        <h3 class="signin-title-secondary">Sign in to continue.</h3>
+
+        <div class="form-group">
+            <input type="text" class="form-control" asp-for="Email" placeholder="Enter your email">
+        </div><!-- form-group -->
+        <div class="form-group mg-b-50">
+            <input type="password" class="form-control" asp-for="Password" placeholder="Enter your password">
+        </div><!-- form-group -->
+        <button class="btn btn-primary btn-block btn-signin">Đăng Nhập</button>
+        <p class="mg-b-0">@ViewBag.Error</p>
+    </div><!-- signin-box -->
+
+</div><!-- signin-wrapper -->   
+</form>

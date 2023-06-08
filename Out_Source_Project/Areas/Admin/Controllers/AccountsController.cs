@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Out_Source_Project.Models;
+using Out_Source_Project.Models.Authentication;
 using X.PagedList;
 
 namespace Out_Source_Project.Areas.Admin.Controllers
@@ -21,6 +22,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Accounts
+        [Authentication]
         public async Task<IActionResult> Index(int? page)
         {
             int pageSize = 10;
@@ -56,6 +58,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         //}
 
         // GET: Admin/Accounts/Create
+        [Authentication]
         public IActionResult Create()
         {
             ViewBag.Role = new SelectList(_context.Roles, "RoleId", "RoleName");
@@ -80,6 +83,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Accounts/Edit/5
+        [Authentication]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Accounts == null)
@@ -133,6 +137,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Accounts/Delete/5
+        [Authentication]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Accounts == null)

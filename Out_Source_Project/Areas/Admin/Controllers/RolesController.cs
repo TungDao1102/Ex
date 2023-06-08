@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Out_Source_Project.Models;
+using Out_Source_Project.Models.Authentication;
 
 namespace Out_Source_Project.Areas.Admin.Controllers
 {
@@ -20,6 +21,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Roles
+        [Authentication]
         public async Task<IActionResult> Index()
         {
               return _context.Roles != null ? 
@@ -50,6 +52,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Roles/Edit/5
+        [Authentication]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Roles == null)
@@ -102,6 +105,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Roles/Delete/5
+        [Authentication]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Roles == null)

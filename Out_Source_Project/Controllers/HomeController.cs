@@ -12,6 +12,12 @@ namespace Out_Source_Project.Controllers
         {
             _logger = logger;
         }
+        private readonly OutSourceContext _context;
+
+        public HomeController(OutSourceContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
@@ -47,5 +53,7 @@ namespace Out_Source_Project.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
     }
 }

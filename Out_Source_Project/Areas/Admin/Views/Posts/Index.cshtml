@@ -16,6 +16,18 @@
     <h6 class="slim-pagetitle">Quản lý bài viết</h6>
 </div><!-- slim-pageheader -->
 
+<div class="row">
+	<div class="col-lg-6">
+		<div class="form-group mg-b-10-force">
+			<select class="form-control select2" data-placeholder="Chọn danh mục" id="catID" name="catID" asp-items="@ViewBag.DanhMuc"> 
+				<option lable="Lọc Theo Danh Mục"> Chọn theo danh mục </option>
+            </select>
+            </div>
+    </div>
+    <div class="col-lg-6">
+		<input class="form-control" placeholder="Tìm kiếm bài viết" type="text" id="keyword" name="keyword" />
+    </div>
+</div>
 <div class="section-wrapper">
     <a class="section-title btn btn-primary" asp-action="Create" asp-area="Admin" asp-controller="Posts">Thêm mới bài viết</a>
 
@@ -31,13 +43,14 @@
                     <th>#</th>
                 </tr>
             </thead>
-            @if (Model != null && Model.Count() > 0)
-            {
-
-                foreach (var item in Model)
+           
+                    <tbody id="record_table">
+                @if (Model != null && Model.Count() > 0)
                 {
-                    string url = $"/{item.Alias}.html";
-                    <tbody>
+
+                    foreach (var item in Model)
+                    {
+                        string url = $"/{item.Alias}.html";
                         <tr>
                             <th scope="row">@item.PostId</th>
                             <td>
@@ -80,9 +93,10 @@
                                 <a asp-area="Admin" asp-action="Delete" asp-route-id="@item.PostId" asp-controller="Posts" class="btn btn-danger">Xóa</a>
                             </td>
                         </tr>
-                    </tbody>
+                   
                 }
             }
+            </tbody>
         </table>
         @Html.PagedListPager(Model, page => Url.Action("Index", new {page=page}), new X.PagedList.Web.Common.PagedListRenderOptions() {
         LiElementClasses= new List<String> {"page-item"},
@@ -90,3 +104,50 @@
         })
     </div><!-- table-responsive -->
 </div>
+@*@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#keyword").keyup(function () {
+                var strKeyword = $("#keyword").val();
+                $.ajax({
+                    url: "/Admin/Posts/FindPost",
+                    datatype: "json",
+                    type: "POST",
+                    data: { keyword: strKeyword },
+                    async: true,
+                    success: function (data) {
+                        $("#record_table").html("");
+                        $("#record_table").html(data);
+                    },
+                    error: function (xhr) {
+                        alert("error");
+                    }
+                });
+            });
+
+            $("#catID").change(function () {
+                var _catID = $(this).children(":selected").attr("value");
+                var catid = parseFloat(_catID);
+                $('#catID option').removeAttr('selected');
+                $("#catID > [value=" + catid + "]").attr("selected", "true");
+                $.ajax({
+                    url: "/Admin/Posts/PostFilter",
+                    datatype: "json",
+                    type: "GET",
+                    data: { catID: catid },
+                    async: true,
+                    success: function (data) {
+                        if (data.status == "success") {
+                            window.location.href = data.redirectUrl;
+                        }
+                    },
+                    error: function (xhr) {
+                        alert("error");
+                    }
+                });
+            });
+        });
+    </script>
+
+}
+*@

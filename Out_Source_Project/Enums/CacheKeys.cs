@@ -4,6 +4,7 @@
     {
         Categories,
         Popular,
-        Social
+        Social,
+		BlogViewModel
     }
 }

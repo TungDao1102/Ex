@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Post>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Out_Source_Project.Models;
+<div class="blog section">
+    <div class="container">
+        <div class="blog_grid">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="section_header text-left">
+                        <h6 class="section_sub_title">Blog</h6>
+                        <h1 class="section_title">Thông tin mới</h1>
+                        <p class="section_desc">Nội dung cần viết vào đây cần viết vào đây cần viết vào đây cần viết vào đây cần viết vào đây.</p>
+                    </div>
+                    <div class="read_more read_all">
+                        <a class="button" asp-action="Blog" asp-controller="Home">Xem Thêm</a>
+                    </div>
+                </div>
+                @foreach(var item in Model) {
+                    DateTime date = (@item.CreatedDate != null) ? (DateTime)@item.CreatedDate : DateTime.MinValue;
+                    <div class="col-lg-4 col-md-6">
+                        <article class="blog_post">
+                            <div class="post_img">
+                                <a href="blog-1.html"><img src="~/images/posts/@item.Thumb" alt="img"></a>
+                                <div class="calendar">
+                                    <a href="#"><span class="date">@date.Day</span><br>Tháng @date.Month</a>
+                                </div>
+                            </div>
+                            <div class="post_content">
+                                <div class="post_header">
+                                    <h3 class="post_title">
+                                        <a href="blog-2.html">@item.Title </a>
+                                    </h3>
+                                </div>
+                                <div class="post_intro">
+                                    <p>@item.Scontents </p>
+                                </div>
+                                <div class="post_footer">
+                                    <div class="read_more">
+                                        <a href="blog-details.html"><span>Đọc Bài</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                }
+               
+            </div>
+        </div>
+    </div>
+</div>

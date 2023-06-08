@@ -27,30 +27,38 @@ namespace Out_Source_Project.Areas.Admin.Controllers
             int pageSize = 10;
             int pageNumber = (page == null || page < 0) ? 1 : page.Value;
             //  var lstPost = await _context.Posts.Include(p => p.Account).Include(p => p.Cat).ToListAsync();
-            List<Post> lstPost = new List<Post>();
-            if (catID !=0)
+            //List<Post> lstPost = new List<Post>();
+            //if (catID !=0)
+            //{
+            //     lstPost = await _context.Posts.Include(p => p.Cat).Where(x => x.CatId == catID).Select(p => new Post
+            //    {
+            //        PostId = p.PostId,
+            //        Title = p.Title,
+            //        Cat = p.Cat,
+            //        Published = p.Published,
+            //        Alias = p.Alias
+            //    }).OrderByDescending(x => x.PostId).ToListAsync();
+            //}
+            //else
+            //{
+            //     lstPost = await _context.Posts.Include(p => p.Account).Include(p => p.Cat).Select(p => new Post
+            //    {
+            //        PostId = p.PostId,
+            //        Title = p.Title,
+            //        Cat = p.Cat,
+            //        Published = p.Published,
+            //        Alias = p.Alias
+            //    }).OrderByDescending(x => x.PostId).ToListAsync();
+            //}
+            var lstPost = await _context.Posts.Include(p => p.Cat).Select(p => new Post
             {
-                 lstPost = await _context.Posts.Include(p => p.Cat).Where(x => x.CatId == catID).Select(p => new Post
-                {
-                    PostId = p.PostId,
-                    Title = p.Title,
-                    Cat = p.Cat,
-                    Published = p.Published,
-                    Alias = p.Alias
-                }).OrderByDescending(x => x.PostId).ToListAsync();
-            }
-            else
-            {
-                 lstPost = await _context.Posts.Include(p => p.Account).Include(p => p.Cat).Select(p => new Post
-                {
-                    PostId = p.PostId,
-                    Title = p.Title,
-                    Cat = p.Cat,
-                    Published = p.Published,
-                    Alias = p.Alias
-                }).OrderByDescending(x => x.PostId).ToListAsync();
-            }
-            PagedList<Post> lst = new PagedList<Post>(lstPost, pageNumber, pageSize);
+                PostId = p.PostId,
+                Title = p.Title,
+                Cat = p.Cat,
+                Published = p.Published,
+                Alias = p.Alias
+            }).OrderByDescending(x => x.PostId).ToListAsync();
+            PagedList <Post> lst = new PagedList<Post>(lstPost, pageNumber, pageSize);
 			ViewBag.DanhMuc = new SelectList(_context.Categories, "CatId", "CatName");
 			return View(lst);
 
@@ -73,20 +81,20 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaDesc,MetaKey,MetaTitle")] Post post, IFormFile? fThumb)
         {
-            if (!User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Login", "Admin", new { Area = "Admin" });
-            }
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    return RedirectToAction("Login", "Admin", new { Area = "Admin" });
+            //}
             var taikhoanID = HttpContext.Session.GetString("AccountId");
-            if(taikhoanID == null)
-            {
-                return RedirectToAction("Login", "Admin", new { Area = "Admin" });
-            }
+            //if(taikhoanID == null)
+            //{
+            //    return RedirectToAction("Login", "Admin", new { Area = "Admin" });
+            //}
             var account = _context.Accounts.AsNoTracking().SingleOrDefault(x => x.AccountId == int.Parse(taikhoanID));
-            if(account == null)
-            {
-                return NotFound();
-            }
+            //if(account == null)
+            //{
+            //    return NotFound();
+            //}
             if (ModelState.IsValid)
             {
                 post.AccountId = account.AccountId;

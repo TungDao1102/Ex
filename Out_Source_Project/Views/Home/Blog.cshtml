@@ -1,4 +1,7 @@
-﻿
+﻿@model X.PagedList.IPagedList<Post>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Out_Source_Project.Models;
+@using X.PagedList.Mvc.Core;
 @{
     ViewData["Title"] = "Blog";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,242 +25,57 @@
 		<div class="container">
 			<div class="blog_grid">
 				<div class="row">
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/b6.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">Diversity in Building Celebrated by Builderrine</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>Builderrine will connect with 10000 people from 90 companies who work on its’ projects each day..</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
+					@foreach(var item in Model)
+					{
+						string url = $"/{item.Alias}.html";
+						DateTime date = (@item.CreatedDate != null) ? (DateTime)@item.CreatedDate : DateTime.MinValue;
+						<div class="col-lg-4 col-md-6">
+							<article class="blog_post">
+								<div class="post_img">
+									<a href="@url"><img src="~/images/posts/@item.Thumb" alt="img"></a>
+									<div class="calendar">
+										<a href="@url"><span class="date">@date.Day</span><br>Tháng @date.Month</a>
 									</div>
 								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/b7.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">Company Receives Recognition for Excellence</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>The construction industry has the capacity to absorb more people into the workforce...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
+								<div class="post_content">
+									<div class="post_header">
+										<h3 class="post_title">
+											<a href="@url">@item.Title</a>
+										</h3>
+									</div>
+									<div class="post_intro">
+										<p>@item.Scontents</p>
+									</div>
+									<div class="post_footer">
+										<div class="read_more">
+											<a href="@url"><span>Đọc Bài Viết</span></a>
+										</div>
 									</div>
 								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/b8.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">Our firm is built to tackle projects like these</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>We offer construction service to industrial, commercial, reside ntial & automotive...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/bg-4.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">Completes Work on Two Projects in Georgia</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>The construction industry has the capacity to absorb more people into the workforce...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/bg-3.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">
-											Action to maintain a safe work environment
-										</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>The construction industry has the capacity to absorb more people into the workforce...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/bg-5.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">History Creating Highrise Designs Ever</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>The construction industry has the capacity to absorb more people into the workforce...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/bg-7.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">Contribution of Men as workers</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>The construction industry has the capacity to absorb more people into the workforce...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/bg-6.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">Use of modern Technology in Road construction</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>The construction industry has the capacity to absorb more people into the workforce...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<article class="blog_post">
-							<div class="post_img">
-								<a href="blog-1.html"><img src="images/blog/bg-8.png" alt="img"></a>
-								<div class="calendar">
-									<a href="#"><span class="date">30</span><br>May</a>
-								</div>
-							</div>
-							<div class="post_content">
-								<div class="post_header">
-									<h3 class="post_title">
-										<a href="blog-details.html">Contribution of women as Builders</a>
-									</h3>
-								</div>
-								<div class="post_intro">
-									<p>The construction industry has the capacity to absorb more people into the workforce...</p>
-								</div>
-								<div class="post_footer">
-									<div class="read_more">
-										<a href="blog-details.html"><span>Read Article</span></a>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="pagination-div">
-						<ul class="pagination">
-							<li><a href="#"><i class="ion-chevron-left"></i></a></li>
+							</article>
+						</div>
+					}
+
+					@*<div class="pagination-div">
+						<ul class="pagination">*@
+							@*<li><a href="#"><i class="ion-chevron-left"></i></a></li>
 							<li><a class="page-number current" href="#">1</a></li>
 							<li><a class="page-number" href="#">2</a></li>
 							<li><a class="page-number" href="#">3</a></li>
-							<li><a href="#"><i class="ion-chevron-right"></i></a></li>
-						</ul>
-					</div>
+							<li><a href="#"><i class="ion-chevron-right"></i></a></li>*@
+							@Html.PagedListPager(Model, page => Url.Action("Blog", new { page = page }), new X.PagedList.Web.Common.PagedListRenderOptions()
+							{
+						//	ContainerDivClasses  = new List<string> { "pagination-div" },
+						//	UlElementClasses = new List<string> { "pagination" },
+							LiElementClasses = new List<string> { "page-number current" },
+							PageClasses = new List<string> { "page-number" },
+							//ClassToApplyToFirstListItemInPager = "current"
+							
+							})
+
+
+						
+					
 				</div>
 			</div>
 		</div>

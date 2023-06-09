@@ -1,7 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        var encodedMessage = '@TempData["SuccessMessage"]';
+        var decodedMessage = document.createElement('textarea');
+        decodedMessage.innerHTML = encodedMessage;
+        var decodedText = decodedMessage.value;
+        alert(decodedText);
+    </script>
+}
 <div class="main_wrapper">
 
     <div class="theme_slider_1">

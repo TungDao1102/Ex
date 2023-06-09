@@ -117,7 +117,7 @@
                                 <li>
                                     <a asp-action="Blog" asp-controller="Home">Blog</a>
                                 </li>
-                                <li class="menu-item"><a href="contact.html">Liên Hệ</a></li>
+                                <li class="menu-item"><a asp-action="Contact" asp-controller="Home">Liên Hệ</a></li>
                             </ul>
                         </div>
                         <div class="phone">
@@ -275,6 +275,7 @@
     <script src="~/client/plugins/aos/aos.js"></script>
     <script src="~/client/js/funfacts.js"></script>
     <script src="~/client/js/custom.js"></script>
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 
 

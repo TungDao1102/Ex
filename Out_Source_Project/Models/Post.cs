@@ -29,9 +29,9 @@ public partial class Post
 
     public int? CatId { get; set; }
 
-    public bool IsHot { get; set; }
+    public bool? IsHot { get; set; }
 
-    public bool IsNewfeed { get; set; }
+    public bool? IsNewfeed { get; set; }
 
     public string? MetaDesc { get; set; }
 

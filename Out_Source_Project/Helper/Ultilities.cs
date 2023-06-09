@@ -11,7 +11,7 @@ namespace Out_Source_Project.Helper
             {
                 if (!string.IsNullOrEmpty(input))
                 {
-                    return Regex.Replace(input, "<.*?>", String.Empty);
+                    return Regex.Replace(input, "<[^>]*>", String.Empty);
                 }
             }
             catch

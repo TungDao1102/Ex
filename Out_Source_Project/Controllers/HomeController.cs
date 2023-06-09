@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Out_Source_Project.Enums;
+using Out_Source_Project.Helper;
 using Out_Source_Project.Models;
 using Out_Source_Project.Models.ViewModel;
 using System.Diagnostics;
@@ -80,13 +81,13 @@ namespace Out_Source_Project.Controllers
 			//		})
 			//		.SingleOrDefaultAsync(x => x.Alias == Alias);
 			//});
-
+			
 			var BlogVM = await _context.Posts
 					.Select(x => new BlogViewModel
 					{
 						Title = x.Title,
 						Thumb = x.Thumb,
-						Contents = x.Contents,
+						Contents = Ultilities.StripHTML(x.Contents),
 						Scontents = x.Scontents,
 						CreateDate = x.CreatedDate,
 						Author = x.Author,
@@ -101,7 +102,6 @@ namespace Out_Source_Project.Controllers
 			{
 				return NotFound();
 			}
-
 			return View(BlogVM);
 		}
 
@@ -111,6 +111,7 @@ namespace Out_Source_Project.Controllers
 		{
 			return View();
 		}
+		public IActionResult ServiceDetail() { return View(); }
 		public IActionResult DuAn()
 		{
 			return View();
@@ -122,6 +123,22 @@ namespace Out_Source_Project.Controllers
 		public IActionResult Fag()
 		{
 			return View();
+		}
+		public IActionResult Contact()
+		{
+			return View();
+		}
+		[HttpPost]
+		public async Task<IActionResult> Contact(Message msg)
+		{
+			if (ModelState.IsValid)
+			{
+				 _context.Messages.Add(msg);
+				await _context.SaveChangesAsync();
+				TempData["SuccessMessage"] = "Thông tin của quý khách đã được ghi lại, chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất. Xin cảm ơn!";
+				return RedirectToAction(nameof(Index));
+			}
+			return View(msg);
 		}
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()

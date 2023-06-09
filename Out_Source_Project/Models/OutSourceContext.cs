@@ -19,6 +19,8 @@ public partial class OutSourceContext : DbContext
 
     public virtual DbSet<Category> Categories { get; set; }
 
+    public virtual DbSet<Message> Messages { get; set; }
+
     public virtual DbSet<Post> Posts { get; set; }
 
     public virtual DbSet<Role> Roles { get; set; }
@@ -63,6 +65,18 @@ public partial class OutSourceContext : DbContext
             entity.Property(e => e.MetaKey).HasMaxLength(255);
             entity.Property(e => e.Thumb).HasMaxLength(255);
             entity.Property(e => e.Title).HasMaxLength(255);
+        });
+
+        modelBuilder.Entity<Message>(entity =>
+        {
+            entity.HasKey(e => e.MsgId);
+
+            entity.ToTable("Message");
+
+            entity.Property(e => e.MsgId).HasColumnName("MsgID");
+            entity.Property(e => e.Email).HasMaxLength(50);
+            entity.Property(e => e.Message1).HasColumnName("Message");
+            entity.Property(e => e.Number).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Post>(entity =>

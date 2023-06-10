@@ -183,7 +183,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
                     if (fThumb != null)
                     {
                         string extension = Path.GetExtension(fThumb.FileName);
-                        string newName = Ultilities.SEOUrl(post.MetaTitle) + "_preview" + extension;
+                        string newName = Ultilities.SEOUrl(post.Title) + "_preview" + extension;
                         post.Thumb = await Ultilities.UploadFile(fThumb, @"posts\", newName.ToLower());
                     }
                     _context.Update(post);

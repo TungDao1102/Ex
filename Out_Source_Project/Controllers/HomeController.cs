@@ -27,8 +27,9 @@ namespace Out_Source_Project.Controllers
 				Scontents = p.Scontents,
 				Title = p.Title,
 				CreatedDate = p.CreatedDate,
-				Thumb = p.Thumb
-			}).OrderByDescending(x => x.CreatedDate).Take(2).ToListAsync();
+				Thumb = p.Thumb,
+                Alias = p.Alias,
+            }).OrderByDescending(x => x.CreatedDate).Take(2).ToListAsync();
 			return View(lstPost);
 		}
 

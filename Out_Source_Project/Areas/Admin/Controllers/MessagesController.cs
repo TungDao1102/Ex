@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Out_Source_Project.Models;
+using Out_Source_Project.Models.Authentication;
 
 namespace Out_Source_Project.Areas.Admin.Controllers
 {
@@ -20,6 +21,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Messages
+        [Authentication]
         public async Task<IActionResult> Index()
         {
               return _context.Messages != null ? 
@@ -28,6 +30,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
         }
 
         // GET: Admin/Messages/Details/5
+        [Authentication]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Messages == null)
@@ -45,6 +48,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
             return View(message);
         }
         // GET: Admin/Messages/Delete/5
+        [Authentication]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Messages == null)

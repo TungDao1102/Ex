@@ -16,6 +16,7 @@
                     </div>
                 </div>
                 @foreach(var item in Model) {
+                    string url = $"/{item.Alias}.html";
                     DateTime date = (@item.CreatedDate != null) ? (DateTime)@item.CreatedDate : DateTime.MinValue;
                     <div class="col-lg-4 col-md-6">
                         <article class="blog_post">
@@ -28,7 +29,7 @@
                             <div class="post_content">
                                 <div class="post_header">
                                     <h3 class="post_title">
-                                        <a href="blog-2.html">@item.Title </a>
+                                        <a href="@url">@item.Title </a>
                                     </h3>
                                 </div>
                                 <div class="post_intro">
@@ -36,7 +37,7 @@
                                 </div>
                                 <div class="post_footer">
                                     <div class="read_more">
-                                        <a href="blog-details.html"><span>Đọc Bài</span></a>
+                                        <a href="@url"><span>Đọc Bài</span></a>
                                     </div>
                                 </div>
                             </div>

@@ -137,7 +137,7 @@ namespace Out_Source_Project.Helper
             {
                 if (newname == null) newname = file.FileName;
                 string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", sDirectory);
-             //   CreateIfMissing(path);
+                CreateIfMissing(path);
                 string pathFile = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", sDirectory, newname);
                 var supportedTypes = new[] { "jpg", "jpeg", "png", "webp" };
                 var fileExt = Path.GetExtension(file.FileName).Substring(1);

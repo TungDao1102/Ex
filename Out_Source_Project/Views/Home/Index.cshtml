@@ -19,19 +19,19 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="slide_content">
-                            <h5 class="sub_heading" data-aos="fade-up" data-aos-duration="1000">Lắp Đặt Ngay<span> +99 (1234) 56 789</span></h5>
+                            <h5 class="sub_heading" data-aos="fade-up" data-aos-duration="1000"><span>Lắp Đặt Ngay 032 696 3723</span></h5>
                             <h2 class="heading" data-aos="fade-up" data-aos-duration="1500">Hệ Thống Lắp Đặt Kho Lạnh</h2>
                             <p class="desc" data-aos="fade-up" data-aos-duration="2000">Là đối tác tin cậy của hầu hết các công ty, nhà máy, xí nghiệp đông lạnh trên toàn thành phố nói riêng và cả nước nói chung.</p>
                             <div class="slider_button" data-aos="fade-right" data-aos-duration="2500">
-                                <a href="about.html" class="button">Xem Thêm</a>
+                                <a asp-action="Services" asp-controller="Home" class="button">Xem Thêm</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 d-flex align-items-end" data-aos="fade-left" data-aos-duration="2500">
+                    @*<div class="col-lg-5 d-flex align-items-end" data-aos="fade-left" data-aos-duration="2500">
                         <div class="layer_object">
                             <img src="/client/images/slider/layer_2.png" alt="">
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                             <div class="services_content_flex_cenrer">
                                 <h6>Dịch Vụ</h6>
                                 <h4><a href="services.html">Tư vấn chọn gói thi công lắp đặt kho lạnh</a></h4>
-                                <a href="service-details.html">Xem Thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                <a asp-action="Services" asp-controller="Home">Xem Thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <div class="main_img" data-aos="fade-up" data-aos-duration="1000">
@@ -66,7 +66,7 @@
                             <div class="services_content_flex_cenrer">
                                 <h6>Dịch Vụ</h6>
                                 <h4><a href="services-2.html">Thi công lắp đặt kho lạnh theo yêu cầu</a></h4>
-                                <a href="service-details.html">Xem Thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                <a asp-action="Services" asp-controller="Home">Xem Thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <div class="main_img" data-aos="fade-up" data-aos-duration="2000">
@@ -83,7 +83,7 @@
                             <div class="services_content_flex_cenrer">
                                 <h6>Dịch Vụ</h6>
                                 <h4><a href="services.html">Bảo hành, đảm bảo chất lượng kho lạnh</a></h4>
-                                <a href="service-details.html">Xem Thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                <a asp-action="Services" asp-controller="Home">Xem Thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <div class="main_img" data-aos="fade-up" data-aos-duration="3000">
@@ -102,7 +102,7 @@
                     <div class="group_image_holder type_1">
                         <div class="expe_box">
                             <div class="expe_box_inner">
-                                <h1>10</h1>
+                                <h1>15</h1>
                                 Năm Kinh Nghiệm
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                         <div class="section_header">
                             <div class="shadow_icon"><img src="/client/images/about/shadow_icon1.png" alt=""></div>
                             <h6 class="section_sub_title">VỀ CHÚNG TÔI</h6>
-                            <h1 class="section_title">Building A New Era in world of Construction</h1>
+                            <h1 class="section_title">Đối tác tin cậy cho giải pháp chuyên nghiệp</h1>
                             <p class="section_desc">
                                 CƠ ĐIỆN LẠNH SAO VÀNG chuyên lắp đặt kho lạnh giá rẻ uy tín và thâm niên trên thị trường, với các trang thiết bị hiện đại, đội ngũ kỹ sư lành nghề, giàu kinh nghiệm và thâm niên trong nhiều dự án lắp kho lạnh trong và ngoài
                                 nước, cam kết đúng tiến độ, chúng tôi là đối tác tin cậy của hầu hết các công ty, nhà máy, xí nghiệp đông lạnh trên toàn thành phố nói riêng và cả nước nói chung.
@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="button" href="about.html">Learn More</a>
+                        <a class="button" asp-action="About" asp-controller="Home">Xem Thêm</a>
                     </div>
                 </div>
             </div>
@@ -156,8 +156,8 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="section_header">
-                        <h6 class="section_sub_title">Thông tin thêm...</h6>
-                        <h1 class="section_title">Thông tin thêm</h1>
+                        <h6 class="section_sub_title">Thông Tin Thêm</h6>
+                        <h1 class="section_title">Giới Thiệu Công Ty</h1>
                     </div>
                     <div class="fun_bottom">
                         <div class="row">
@@ -167,7 +167,7 @@
                                         <img src="/client/images/funfact/p1.png" alt="icon">
                                     </div>
                                     <div class="fun_content">
-                                        <h1><span class="fun-number">10</span></h1>
+                                        <h1><span class="fun-number">15</span></h1>
                                         <p>Năm Kinh Nghiệm</p>
                                     </div>
                                 </div>
@@ -178,7 +178,7 @@
                                         <img src="/client/images/funfact/p2.png" alt="icon">
                                     </div>
                                     <div class="fun_content">
-                                        <h1><span class="fun-number">100</span><span class="fun-suffix">+</span></h1>
+                                        <h1><span class="fun-number">3000</span><span class="fun-suffix">+</span></h1>
                                         <p>Dự Án Hoàn Thành</p>
                                     </div>
                                 </div>
@@ -223,8 +223,8 @@
         <div class="container-fluid g-0">
             <div class="section_header text-center">
                 <div class="shadow_icon"><img src="/client/images/about/shadow_icon1.png" alt=""></div>
-                <h6 class="section_sub_title">Các Dự Án Hoặc Hợp Tác Tiêu Biểu... </h6>
-                <h1 class="section_title">Hình ảnh chưa có cụ thể</h1>
+                <h6 class="section_sub_title">Dự án tiêu biểu </h6>
+                <h1 class="section_title">Thi Công Và Kết Quả</h1>
             </div>
             <div class="row g-0">
                 <div class="col">
@@ -232,14 +232,14 @@
                         <button class="button is-checked" data-filter="*">Tất Cả</button>
                         <button class="button" data-filter=".commercial">Kho Lạnh</button>
                         <button class="button" data-filter=".highrise">Bể Hải Sản</button>
-                        <button class="button" data-filter=".residential">Ví Dụ</button>
-                        <button class="button" data-filter=".business">Ví Dụ</button>
+                        <button class="button" data-filter=".residential">Tủ Đông</button>
+                        <button class="button" data-filter=".business">Điều Hòa</button>
                     </div>
 
                     <div class="grid grid-5">
                         <div class="element-item highrise">
                             <div class="teambox">
-                                <img src="/client/images/team/Project_2_Images/3.png" alt="">
+                                <img src="/client/images/view-inside-new-warehouse-mezzanine-floor-looking-into-hall.jpg" alt="">
                                 <div class="teambox_inner">
                                     <div class="team_social">
                                         <div class="share"><i class="ion-android-share-alt"></i></div>
@@ -252,8 +252,8 @@
                                     </div>
                                     <div class="teambox_intro">
                                         <div class="team_flex">
-                                            <h6>NEW YORK</h6>
-                                            <h5><a href="project-details.html">Multistored Building</a></h5>
+                                            <h6>Hình Ảnh</h6>
+                                            <h5><a href="project-details.html">Nhà Máy</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -261,7 +261,7 @@
                         </div>
                         <div class="element-item highrise business">
                             <div class="teambox">
-                                <img src="/client/images/team/Project_2_Images/4.png" alt="">
+                                <img src="/client/images/senior-logistic-worker-hardhat-uniform-walking-warehouse-wheeling-palette-jack-back-view-full-length-labor-logistics-concept.jpg" alt="">
                                 <div class="teambox_inner">
                                     <div class="team_social">
                                         <div class="share"><i class="ion-android-share-alt"></i></div>
@@ -274,8 +274,8 @@
                                     </div>
                                     <div class="teambox_intro">
                                         <div class="team_flex">
-                                            <h6>NEW YORK</h6>
-                                            <h5><a href="project-details.html">Highrise Architecture</a></h5>
+                                            <h6>Hình Ảnh</h6>
+                                            <h5><a href="project-details.html">Quy Trình</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -283,7 +283,7 @@
                         </div>
                         <div class="element-item residential ">
                             <div class="teambox">
-                                <img src="/client/images/team/Project_2_Images/5.png" alt="">
+                                <img src="/client/images/logistic-center-with-storage-units.jpg" alt="">
                                 <div class="teambox_inner">
                                     <div class="team_social">
                                         <div class="share"><i class="ion-android-share-alt"></i></div>
@@ -296,8 +296,8 @@
                                     </div>
                                     <div class="teambox_intro">
                                         <div class="team_flex">
-                                            <h6>NEW YORK</h6>
-                                            <h5><a href="project-details.html">Large Swiming Pool</a></h5>
+                                            <h6>Hình Ảnh</h6>
+                                            <h5><a href="project-details.html">Kho Đông Lạnh</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -305,7 +305,7 @@
                         </div>
                         <div class="element-item commercial">
                             <div class="teambox">
-                                <img src="/client/images/team/Project_2_Images/1.png" alt="">
+                                <img src="/client/images/metallic-ovens-inside-big-factory-with-heavy-equipments.jpg" alt="">
                                 <div class="teambox_inner">
                                     <div class="team_social">
                                         <div class="share"><i class="ion-android-share-alt"></i></div>
@@ -318,8 +318,8 @@
                                     </div>
                                     <div class="teambox_intro">
                                         <div class="team_flex">
-                                            <h6>NEW YORK</h6>
-                                            <h5><a href="project-details.html">Large City Tower</a></h5>
+                                            <h6>Hình Ảnh</h6>
+                                            <h5><a href="project-details.html">Nhà Máy</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -327,7 +327,7 @@
                         </div>
                         <div class="element-item residential">
                             <div class="teambox">
-                                <img src="/client/images/team/Project_2_Images/2.png" alt="">
+                                <img src="/client/images/warehouse-industrial-building-interior-with-people-forklifts-handling-goods-storage-area.jpg" alt="">
                                 <div class="teambox_inner">
                                     <div class="team_social">
                                         <div class="share"><i class="ion-android-share-alt"></i></div>
@@ -340,8 +340,8 @@
                                     </div>
                                     <div class="teambox_intro">
                                         <div class="team_flex">
-                                            <h6>NEW YORK</h6>
-                                            <h5><a href="project-details.html">Curve Sky Tower</a></h5>
+                                            <h6>Hình Ảnh</h6>
+                                            <h5><a href="project-details.html">Kho Hàng</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -362,13 +362,13 @@
                     <div class="col-lg-8">
                         <div class="banner_text">
                             <img src="/client/images/phone3.png" alt="">
-                            <h1>Dịch vụ hỗ trợ 24/7. Liên hệ với chúng tôi bất cứ khi nào bạn cần...</h1>
+                            <h1>Dịch vụ hỗ trợ 24/7. Liên hệ với chúng tôi bất cứ khi nào bạn cần</h1>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="banner_phone">
                             <h4>Đường Dây Nóng</h4>
-                            <span>+99 (1234) 56 789</span>
+                            <span> 032 696 3723</span>
                         </div>
                     </div>
                 </div>
@@ -376,155 +376,7 @@
         </div>
     </div>
 
-    <div class="testimonial pd_btom_80">
-        <div class="container">
-            <div class="section_header text-center">
-                <div class="shadow_icon"><img src="/client/images/shadow_icon3.png" alt=""></div>
-                <h6 class="section_sub_title">Đánh Giá</h6>
-                <h1 class="section_title">Đánh Giá Của Khách Hàng</h1>
-                <p class="section_desc">Viết thêm vào đây thêm vào đây thêm vào đây thêm vào đây thêm vào đây thêm vào đây thêm vào đây....</p>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="owl_testimonial1 owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="testibox1">
-                                <div class="testibox_inner">
-                                    <div class="testi-content">
-                                        <ul>
-                                            <li class="text">Rating:</li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <p>
-                                            “Đánh giá, mình tự nghĩ và viết Đánh giá, mình tự nghĩ và viết Đánh giá, mình tự nghĩ và viết Đánh giá, mình tự nghĩ và viết Đánh giá, mình tự nghĩ và viết Đánh giá, mình tự nghĩ và viết Đánh giá, mình tự nghĩ
-                                            và viết ”
-                                        </p>
-                                    </div>
-                                    <div class="testi-top">
-                                        <div class="testi-img">
-                                            <img src="/client/images/reviewer1.png" alt="">
-                                        </div>
-                                        <div class="testi-info">
-                                            <h4>Tên tuổi</h4>
-                                            <h6>Địa chỉ/công ty</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testibox1">
-                                <div class="testibox_inner">
-                                    <div class="testi-content">
-                                        <ul>
-                                            <li class="text">Rating:</li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <p>“Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
-                                    </div>
-                                    <div class="testi-top">
-                                        <div class="testi-img">
-                                            <img src="/client/images/reviewer4.png" alt="">
-                                        </div>
-                                        <div class="testi-info">
-                                            <h4>Marina Samuel</h4>
-                                            <h6>New York</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testibox1">
-                                <div class="testibox_inner">
-                                    <div class="testi-content">
-                                        <ul>
-                                            <li class="text">Rating:</li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <p>“Builderrine Construction provides us nice serives. The have designed and build our Utah Shopping Mall project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
-                                    </div>
-                                    <div class="testi-top">
-                                        <div class="testi-img">
-                                            <img src="/client/images/reviewer3.png" alt="">
-                                        </div>
-                                        <div class="testi-info">
-                                            <h4>Oakland Gardner</h4>
-                                            <h6>UTAH</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testibox1">
-                                <div class="testibox_inner">
-                                    <div class="testi-content">
-                                        <ul>
-                                            <li class="text">Rating:</li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <p>Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
-                                    </div>
-                                    <div class="testi-top">
-                                        <div class="testi-img">
-                                            <img src="/client/images/reviewer1.png" alt="">
-                                        </div>
-                                        <div class="testi-info">
-                                            <h4>Johnathon Doe</h4>
-                                            <h6>New York</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testibox1">
-                                <div class="testibox_inner">
-                                    <div class="testi-content">
-                                        <ul>
-                                            <li class="text">Rating:</li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <p>Builderrine Construction provides us nice serives. The have designed and build our NY Pent House project. They have exceeded our expectation and did such an amazing job. We are very happy with their work”</p>
-                                    </div>
-                                    <div class="testi-top">
-                                        <div class="testi-img">
-                                            <img src="/client/images/reviewer1.png" alt="">
-                                        </div>
-                                        <div class="testi-info">
-                                            <h4>Johnathon Doe</h4>
-                                            <h6>New York</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	@await Html.PartialAsync("_rate")
 
     @await Html.PartialAsync("_Blog")
 

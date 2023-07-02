@@ -20,10 +20,40 @@
 
                 height: 400,
                 minHeight: null,
-                maxHeight: null,
+                maxHeight: null
+				//callbacks: {
+    //                onImageUpload: function (files) {
+    //                    for (var i = 0; i < files.length; i++) {
+                           
+    //                        uploadImage(files[i]);
+    //                    }
+    //                }
+    //            }
 
             });
         });
+
+        //function uploadImage(file) {
+        //    var formData = newFormData();
+        //    formData.append("uploadedFiles", file);
+        //    $.ajax({
+        //        data: formData,
+        //        type: "POST",
+        //        url: '/Posts/UploadFile',
+        //        cache: false,
+        //        contentType: false,
+        //        processData: false,
+        //        success: function (FileUrl) {
+        //            alert(FileUrl);
+        //            var imgNode = document.createElement('img');
+        //            imgNode.src = FileUrl;
+        //            $('#Contents').summernote('insertNode', imgNode);
+        //        },
+        //        error: function (data) {
+        //            alert(data.responseText);
+        //        }
+        //    });
+        //}
         
     </script>
 }

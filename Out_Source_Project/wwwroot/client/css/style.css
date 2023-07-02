@@ -4290,7 +4290,7 @@ video {
 
 .theme_slider_1 .slider {
     position: relative;
-    background-image: url("../images/slider/bg4.jpg");
+    background-image: url("../images/anhnen.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9281,7 +9281,7 @@ video {
 }
 
 .dark-theme .theme_slider_1 .slider {
-    background-image: url("../images/slider/bg4.jpg");
+/*    background-image: url("../images/slider/industrial-park-factory-building-warehouse.jpg");*/
 }
 
 .dark-theme .theme_slider_1 .slider::before {
@@ -11521,6 +11521,7 @@ video {
     }
     .theme_slider_1 .slider .slider_button .button {
         margin-right: 0;
+        max-width: 200px;
     }
     .theme_slider_2 .slider .slide_content .heading {
         font-size: 40px;

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Out_Source_Project.Helper;
+
 using Out_Source_Project.Models;
 using Out_Source_Project.Models.Authentication;
 using X.PagedList;
@@ -321,6 +322,31 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 			{
 				return null;
 			}
+		}
+
+		[HttpPost]
+		/// <summary>
+		/// Phương thức này sẽ được gọi từ jQuery Ajax mỗi khi user chọn hình để chèn vao bài viết từ Summernote
+		/// </summary>
+		/// <param name="uploadFiles"></param>
+		/// <returns></returns>
+		public async Task<JsonResult> uploadFiles(IFormFile uploadFiles)
+		{
+			string returnImagePath = string.Empty;
+			string filename, extension, imageName, imageSavePath;
+			if (uploadFiles.Length > 0)
+			{
+				filename = Path.GetFileNameWithoutExtension(uploadFiles.FileName);
+				extension = Path.GetExtension(uploadFiles.FileName);
+				imageName = filename + DateTime.Now.ToString("yyyy_MM_dd_HHmmss");
+				imageSavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "postedImage", imageName + extension);
+				using (var stream = new FileStream(imageSavePath, FileMode.Create))
+				{
+					await uploadFiles.CopyToAsync(stream);
+				}
+				returnImagePath = "/postedImage/" + imageName + extension;
+			}
+			return Json(Convert.ToString(returnImagePath));
 		}
 
 	}

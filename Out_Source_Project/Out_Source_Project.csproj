@@ -31,6 +31,7 @@
     <Folder Include="wwwroot\images\icon\" />
     <Folder Include="wwwroot\images\imgpost\" />
     <Folder Include="wwwroot\images\posts\" />
+    <Folder Include="wwwroot\postedImage\" />
   </ItemGroup>
 
   <ItemGroup>

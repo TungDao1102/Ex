@@ -60,7 +60,7 @@
 									</div>
 
 									<p>
-										@Model.Contents
+										@Html.Raw(Model.Contents)
 									</p>
 									
 
@@ -97,7 +97,7 @@
 								</div>
 								<div class="author-block">
 									<h5 class="author_name">@Model.Author</h5>
-									<p class="author_intro">Install a sensor light to turn on as you enter the driveway and approach the garage. Not only will it prove a burglar deterrent it will also assist.</p>
+									<p class="author_intro">Một chuyên gia có kinh nghiệm trong lĩnh vực thiết kế, vận hành và bảo trì các hệ thống kho lạnh, đem đến cho độc giả những kiến thức, kinh nghiệm và giải pháp thực tế để sử dụng kho lạnh hiệu quả và bảo vệ sản phẩm.</p>
 									<div class="social_media">
 										<ul class="social_list">
 											<li><a href="#"><i class="ion-social-facebook"></i></a></li>
@@ -123,9 +123,9 @@
 												<img alt="img" src="/client/images/blog/commenter1.png" class="avatar">
 											</div>
 											<div class="comment_block">
-												<h4 class="commenter_name">Patric Doe <span class="reply"><a href="#" class="reply">Reply</a></span></h4>
-												<p class="commenter_review">As the world continues to fight COVID-19 some are for way they can improve the security of their buildings.</p>
-												<h6 class="comment_date">17 Apr 2020</h6>
+												<h4 class="commenter_name">Trần Mỹ Linh <span class="reply"><a href="#" class="reply">Reply</a></span></h4>
+												<p class="commenter_review">Làm thế nào để tối ưu hóa hoạt động của các hệ thống điều hòa và kho lạnh, đồng thời đảm bảo giảm thiểu tác động đến môi trường và tiết kiệm năng lượng?</p>
+												<h6 class="comment_date">17 Tháng 7 2023</h6>
 											</div>
 										</div>
 
@@ -136,12 +136,11 @@
 														<img alt="img" src="/client/images/blog/commenter2.png" class="avatar">
 													</div>
 													<div class="comment_block">
-														<h4 class="commenter_name">Jelian Macardo <span class="reply"><a href="#" class="reply">Reply</a></span></h4>
+														<h4 class="commenter_name">Vũ Đức Nhận <span class="reply"><a href="#" class="reply">Reply</a></span></h4>
 														<p class="commenter_review">
-															Lorem ipsum dolor sit amet. Ut enim ad minima veniam
-															quis nostrum exercitationem mosequatu autem.
+															Chúng ta cần áp dụng các giải pháp như sử dụng công nghệ tiên tiến, tối ưu hóa thiết kế và vận hành, đảm bảo bảo trì định kỳ, và sử dụng các nguồn năng lượng thân thiện với môi trường.
 														</p>
-														<h6 class="comment_date">17 Apr 2020</h6>
+														<h6 class="comment_date">18 Tháng 7 2023</h6>
 													</div>
 												</div>
 											</li><!-- #comment-## -->
@@ -153,12 +152,11 @@
 												<img alt="img" src="/client/images/blog/commenter1.png" class="avatar">
 											</div>
 											<div class="comment_block">
-												<h4 class="commenter_name">Patric Doe <span class="reply"><a href="#" class="reply">Reply</a></span></h4>
+												<h4 class="commenter_name">Trần Mỹ Linh <span class="reply"><a href="#" class="reply">Reply</a></span></h4>
 												<p class="commenter_review">
-													Lorem dolor sit amet. Ut enim ad minima veniam
-													quis exercitationem mosequatu autem.
+													Cảm ơn, tôi đã đọc bài viết lưu ý khi sử dụng kho lạnh của bạn và tôi thấy nó rất hữu ích.
 												</p>
-												<h6 class="comment_date">17 Apr 2020</h6>
+												<h6 class="comment_date">20 Tháng 7 2023</h6>
 											</div>
 										</div>
 									</li><!-- #comment-## -->
@@ -171,16 +169,16 @@
 
 							<div class="makeacomment">
 								<h4 class="widget_title">
-									Make a comment
+									Bình Luận
 									<span class="title_line"></span>
 								</h4>
 								<form class="contact_form">
-									<p class="comment-notes">Your email address will not be published. Required fields are marked *</p>
+									<p class="comment-notes">Thông tin của bạn sẽ được bảo mật</p>
 									<div class="form-container">
 										<div class="row">
 											<div class="col-md-6 col-lg-6">
 												<div class="form-group">
-													<input type="text" name="name" class="form-control" placeholder="Name*" required>
+													<input type="text" name="name" class="form-control" placeholder="Tên*" required>
 												</div>
 											</div>
 											<div class="col-md-6 col-lg-6">
@@ -190,12 +188,12 @@
 											</div>
 											<div class="col-md-12 col-lg-12">
 												<div class="form-group">
-													<textarea name="message" class="form-control" placeholder="Your Comment Here*" required></textarea>
+													<textarea name="message" class="form-control" placeholder="Bình Luận Của Bạn*" required></textarea>
 												</div>
 											</div>
 											<div class="col-md-12 col-lg-12">
 												<div class="form-group">
-													<input class="button" type="submit" value="Submit" name="submit">
+													<input class="button" type="submit" value="Gửi" name="submit">
 												</div>
 											</div>
 										</div>
@@ -210,7 +208,7 @@
 							<div id="search" class="widget widget_search">
 								<div class="sidebar_search">
 									<form class="search_form" >
-										<input type="text" name="search" class="keyword form-control" placeholder="Search Products...">
+										<input type="text" name="search" class="keyword form-control" placeholder="Tìm Kiếm ...">
 										<button type="submit" class="form-control-submit"><i class="ion-ios-search"></i></button>
 									</form>
 								</div>
@@ -223,7 +221,7 @@
 								</h4>
 								<div class="sidebar_author">
 									<img src="/client/images/blog/author.png" alt="img">
-									<p class="intro">Sed ut perspiciatis unde omnis iste natus err or sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt</p>
+									<p class="intro">Đem đến cho độc giả các kiến thức, kinh nghiệm và giải pháp thực tế, hữu ích trong quá trình thiết kế, xây dựng và vận hành các hệ thống liên quan trong lĩnh vực.</p>
 									<div class="author_social">
 										<ul>
 											<li><a href="#"><i class="ion-social-facebook"></i></a></li>
@@ -248,8 +246,8 @@
 												<img class="primary_img" src="/client/images/blog/thumbnail1.png" alt="">
 											</div>
 											<div class="recent_post_content">
-												<h5><a href="blog-1.html">History Creating Highrise Designs Ever</a></h5>
-												<h6>09 April 2020</h6>
+												<h5><a href="blog-1.html">Cách Lắp Kho Lạnh Tiết Kiệm Chi Phí</a></h5>
+												<h6>09 Tháng 8 2023</h6>
 											</div>
 										</li>
 										<li class="recent_post_item">
@@ -257,8 +255,8 @@
 												<img class="primary_img" src="/client/images/blog/thumbnail2.png" alt="">
 											</div>
 											<div class="recent_post_content">
-												<h5><a href="blog-2.html">Do's & Don'ts in Lock opening</a></h5>
-												<h6>06 April 2020</h6>
+												<h5><a href="blog-2.html">Những Lưu Ý Quan Trọng Khi Sử Dụng Kho Lạnh</a></h5>
+												<h6>06 Tháng 7 2023</h6>
 											</div>
 										</li>
 										<li class="recent_post_item">
@@ -266,8 +264,8 @@
 												<img class="primary_img" src="/client/images/blog/thumbnail3.png" alt="">
 											</div>
 											<div class="recent_post_content">
-												<h5><a href="blog-1.html">Locksmith cost Estimation</a></h5>
-												<h6>02 April 2020</h6>
+												<h5><a href="blog-1.html">Các Loại Gói Dịch Vụ Bảo Hành Kho Lạnh</a></h5>
+												<h6>02 Tháng 6 2023</h6>
 											</div>
 										</li>
 									</ul>
@@ -276,36 +274,36 @@
 
 							<div id="categories-1" class="widget widget_categories">
 								<h4 class="widget_title">
-									Categories
+									Danh Mục
 									<span class="title_line"></span>
 								</h4>
 								<div class="sidebar_categories">
 									<ul class="category_list">
-										<li class="active"><a href="project.html">Construction</a> (5)</li>
-										<li><a href="project-2.html">Highrise</a> (7)</li>
-										<li><a href="project-2.html">Technology</a> (4)</li>
-										<li><a href="project.html">Structure</a> (2)</li>
-										<li><a href="project-2.html">Accessorries</a> (4)</li>
+										<li class="active"><a asp-action="Services" asp-controller="Home"> Lắp Đặt</a> (5)</li>
+										<li><a asp-action="Services" asp-controller="Home">Hướng Dẫn</a> (7)</li>
+										<li><a asp-action ="Services" asp-controller="Home">Tư Vấn</a>	(4) </li>
+										<li><a asp-action="Services" asp-controller="Home">Tin Mới</a> (2)</li>
+										<li><a asp-action="Services" asp-controller="Home">Thời Sự</a> (4)</li>
 									</ul>
 								</div>
 							</div>
 
 							<div id="tags-1" class="widget widget_tag_cloud">
 								<h4 class="widget_title">
-									Tag Cloud
+									Đính Kèm
 									<span class="title_line"></span>
 								</h4>
 								<div class="sidebar_tags">
 									<ul class="tag_list">
-										<li><a href="about.html">Builder</a></li>
-										<li><a href="services.html">Construction</a></li>
-										<li><a href="services-2.html">Trendy</a></li>
-										<li><a href="project.html">Tees</a></li>
-										<li><a href="project-2.html">Highrise</a></li>
-										<li><a href="project-details.html">Technology</a></li>
-										<li><a href="service-details.html">Runway</a></li>
-										<li><a href="about.html">Manpower</a></li>
-										<li><a href="blog-details.html">Property</a></li>
+										<li><a asp-action="Services" asp-controller="Home" >Sửa Chữa</a></li>
+										<li><a asp-action="Services" asp-controller="Home">Kho Lạnh</a></li>
+										<li><a asp-action="Services" asp-controller="Home">Công Nghiệp</a></li>
+										<li><a asp-action="Services" asp-controller="Home">Tư Vấn</a></li>
+										<li><a asp-action ="Services" asp-controller="Home">Bể Lạnh</a></li>
+										<li><a asp-action ="Services" asp-controller="Home">Lắp Đặt</a></li>
+										<li><a asp-action="Services" asp-controller="Home">Thi Công</a></li>
+										<li><a asp-action="Services" asp-controller="Home">Dịch Vụ</a></li>
+										<li><a asp-action ="Services" asp-controller="Home">Bảo Hành</a></li>
 									</ul>
 								</div>
 							</div>

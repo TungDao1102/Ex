@@ -86,7 +86,7 @@ namespace Out_Source_Project.Controllers
                     {
                         Title = x.Title,
                         Thumb = x.Thumb,
-                        Contents = Ultilities.StripHTML(x.Contents),
+                        Contents = x.Contents,
                         Scontents = x.Scontents,
                         CreateDate = x.CreatedDate,
                         Author = x.Author,

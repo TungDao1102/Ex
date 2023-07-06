@@ -67,19 +67,19 @@ namespace Out_Source_Project.Areas.Admin.Controllers
                 {
                     string extension = Path.GetExtension(fThumb.FileName);
 					string newName = Ultilities.SEOUrl(category.CatName) +"_preview"+ extension;
-					category.Thumb = await Ultilities.UploadFile(fThumb, @"categories\", newName.ToLower());
+					category.Thumb = await Ultilities.UploadFile(fThumb, @"categories", newName.ToLower());
 				}
 				if (fCover != null && fCover.Length > 0)
 				{
 					string extension = Path.GetExtension(fCover.FileName);
 					string newName = "cover_"+ Ultilities.SEOUrl(category.CatName) + extension;
-					category.Cover = await Ultilities.UploadFile(fCover, @"cover\", newName.ToLower());
+					category.Cover = await Ultilities.UploadFile(fCover, @"cover", newName.ToLower());
 				}
 				if (fIcon != null && fIcon.Length > 0)
 				{
 					string extension = Path.GetExtension(fIcon.FileName);
 					string newName = "icon_"+ Ultilities.SEOUrl(category.CatName) + extension;
-					category.Icon = await Ultilities.UploadFile(fIcon, @"icon\", newName.ToLower());
+					category.Icon = await Ultilities.UploadFile(fIcon, @"icon", newName.ToLower());
 				}  
                 _context.Add(category);
                 await _context.SaveChangesAsync();
@@ -136,20 +136,20 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 					{
 						string extension = Path.GetExtension(fThumb.FileName);
 						string newName = Ultilities.SEOUrl(category.CatName) + "_preview" + extension;
-						category.Thumb = await Ultilities.UploadFile(fThumb, @"categories\", newName.ToLower());
+						category.Thumb = await Ultilities.UploadFile(fThumb, @"categories", newName.ToLower());
 					}
                     if (fCover != null)
 					{
 						string extension = Path.GetExtension(fCover.FileName);
 						string newName = "cover_" + Ultilities.SEOUrl(category.CatName) + extension;
-						category.Cover = await Ultilities.UploadFile(fCover, @"cover\", newName.ToLower());
+						category.Cover = await Ultilities.UploadFile(fCover, @"cover", newName.ToLower());
                     }
 
                     if (fIcon != null)
                     {
 						string extension = Path.GetExtension(fIcon.FileName);
 						string newName = "icon_" + Ultilities.SEOUrl(category.CatName) + extension;
-						category.Icon = await Ultilities.UploadFile(fIcon, @"icon\", newName.ToLower());
+						category.Icon = await Ultilities.UploadFile(fIcon, @"icon", newName.ToLower());
 					}
                     _context.Update(category);
                     await _context.SaveChangesAsync();

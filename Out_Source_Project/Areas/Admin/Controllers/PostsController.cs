@@ -110,7 +110,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 				{
 					string extension = Path.GetExtension(fThumb.FileName);
 					string newName = Ultilities.SEOUrl(post.Title) + extension;
-					post.Thumb = await Ultilities.UploadFile(fThumb, @"posts\", newName.ToLower());
+					post.Thumb = await Ultilities.UploadFile(fThumb, @"posts", newName.ToLower());
 				}
 				//if (post.IsNewfeed == null)
 				//{
@@ -184,7 +184,7 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 					{
 						string extension = Path.GetExtension(fThumb.FileName);
 						string newName = Ultilities.SEOUrl(post.Title) + "_preview" + extension;
-						post.Thumb = await Ultilities.UploadFile(fThumb, @"posts\", newName.ToLower());
+						post.Thumb = await Ultilities.UploadFile(fThumb, @"posts", newName.ToLower());
 					}
 					_context.Update(post);
 					await _context.SaveChangesAsync();
@@ -293,36 +293,6 @@ namespace Out_Source_Project.Areas.Admin.Controllers
 		//        return PartialView("_FindPost", null);
 		//    }
 		//}
-
-		[HttpPost]
-		public static async Task<string> UploadFile(IFormFile file, string sDirectory = @"imgpost\", string newname = null)
-		{
-			try
-			{
-				if (newname == null) newname = file.FileName;
-				string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", sDirectory);
-				//   CreateIfMissing(path);
-				string pathFile = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", sDirectory, newname);
-				var supportedTypes = new[] { "jpg", "jpeg", "png", "webp" };
-				var fileExt = Path.GetExtension(file.FileName).Substring(1);
-				if (!supportedTypes.Contains(fileExt.ToLower())) /// Khác các file định nghĩa
-				{
-					return null;
-				}
-				else
-				{
-					using (var stream = new FileStream(pathFile, FileMode.Create))
-					{
-						await file.CopyToAsync(stream);
-					}
-					return newname;
-				}
-			}
-			catch (Exception ex)
-			{
-				return null;
-			}
-		}
 
 		[HttpPost]
 		/// <summary>

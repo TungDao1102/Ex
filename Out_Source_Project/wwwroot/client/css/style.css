@@ -1275,7 +1275,7 @@ option {
     position: relative;
     font-size: 24px;
     font-weight: 800;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     flex: auto;
@@ -11491,7 +11491,7 @@ video {
         padding-left: 0px;
     }
     .header .phone>i {
-        display: none;
+      
     }
     .header .middle_bar_inner {
         flex-flow: row wrap;
